@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       <header><h1>Things To Do List</h1></header>
       <br />
-      <TodoForm />
+      <TodoForm setStateArr={setState}/>
     </div>
   );
 }
