@@ -5,7 +5,11 @@ export default function TodoForm(props) {
 
     const addTodo = () => {
         const timeStr = Date.now();
-        props.setTodosArr([...props.todosArr,{text : input, id : parseInt(timeStr)}]);
+        props.setTodosArr([...props.todosArr,{
+            text : input,
+            id : parseInt(timeStr),
+            completed : false
+        }]);
     }
 
     const handleChange = e => {
