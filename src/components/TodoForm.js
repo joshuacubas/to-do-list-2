@@ -33,7 +33,7 @@ export default function TodoForm(props) {
                     className="form-input-box"
                     onChange={handleChange}
                 />
-                <button>Submit</button>
+                <button>Add New</button>
             </form>
         </div>
     )
