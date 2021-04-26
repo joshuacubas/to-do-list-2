@@ -8,7 +8,7 @@ export default function TodoForm(props) {
         props.setTodosArr([...props.todosArr,{
             text : input,
             id : parseInt(timeStr),
-            completed : false
+            isCompleted : false
         }]);
     }
 
