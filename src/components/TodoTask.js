@@ -1,8 +1,9 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 export default function TodoTask(props) {
+    const [isHidden,setIsHidden] = useState(true);
+
     const deleteTodoTask = () => {
-        console.log("delete task called",props.task.id)
         let subtractedArr = props.todosArr.filter(todo => todo.id !== props.task.id);
         props.setTodosArr(subtractedArr);
 
@@ -30,6 +31,20 @@ export default function TodoTask(props) {
                     ✘
                 </button>
                 <button className="todo-buttons">✎</button>
+            </div>
+            <div id={props.task.id} className="todo-hidden-form">
+                <p>make this div its own component l8r</p>
+                <form>
+                    <input
+                        type="text"
+                        name={props.task.id}
+                        placeholder={props.task.text}
+                        className="todo-edit-form-input"
+                        
+                    />
+                    <button>Submit Changes</button>
+                </form>
+                <button>Cancel</button>
             </div>
         </li>
     )

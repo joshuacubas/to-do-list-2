@@ -1,7 +1,11 @@
-import React, {useState} from 'react'
+import React, {useState, useRef, useEffect} from 'react'
 
 export default function TodoForm(props) {
     const [input,setInput] = useState("");
+
+    const inputRef = useRef(null);
+
+    useEffect( ()=>{inputRef.current.focus()} );
 
     const addTodo = () => {
         const timeStr = Date.now();
@@ -32,6 +36,7 @@ export default function TodoForm(props) {
                     name="description"
                     className="form-input-box"
                     onChange={handleChange}
+                    ref={inputRef}
                 />
                 <button>Add New</button>
             </form>
