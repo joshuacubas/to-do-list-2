@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import EditForm from "./EditForm"
 
 export default function TodoTask(props) {
     const [isHidden,setIsHidden] = useState(true);
@@ -12,7 +13,12 @@ export default function TodoTask(props) {
     const taskCompletionToggled = () => {
         console.log(`${props.task.text} clicked`)
         // change the task.isCompleted to opposite
+        // or nvm completed UL > Li will have strike through style
     } 
+
+    const toggleHiddenTodoForm = () => {
+        setIsHidden(!isHidden);
+    }
 
     return (
         <li>
@@ -30,9 +36,10 @@ export default function TodoTask(props) {
                 >
                     ✘
                 </button>
-                <button className="todo-buttons">✎</button>
+                <button className="todo-buttons" onClick={toggleHiddenTodoForm}>✎</button>
             </div>
-            <div id={props.task.id} className="todo-hidden-form">
+            <EditForm isHidden={isHidden}/>
+            {/* <div id={props.task.id} className="todo-hidden-form">
                 <p>make this div its own component l8r</p>
                 <form>
                     <input
@@ -40,12 +47,12 @@ export default function TodoTask(props) {
                         name={props.task.id}
                         placeholder={props.task.text}
                         className="todo-edit-form-input"
-                        
+
                     />
                     <button>Submit Changes</button>
                 </form>
                 <button>Cancel</button>
-            </div>
+            </div> */}
         </li>
     )
 }

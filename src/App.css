@@ -18,6 +18,6 @@
   background-color: rgba(208, 230, 223, 0.892);
  }
 
- .todo-hidden-form {
+ .todo-edit-form-hidden {
    display: none;
  }
