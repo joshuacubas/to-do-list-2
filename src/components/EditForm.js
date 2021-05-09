@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react';
 
 export default function EditForm(props) {
 
@@ -9,6 +9,12 @@ export default function EditForm(props) {
         // needs initial value of previous todo text
         // placeholder says new decription here
     
+    const [input,SetInput] = useState(props.prevText)
+
+    const handleChange = (e) => {
+        SetInput(e.target.value);
+    }
+
     return (
         <div className={props.isHidden ? "todo-edit-form-hidden" : "todo-edit-form-invisible"}>
             <form>
@@ -16,11 +22,13 @@ export default function EditForm(props) {
                     <input 
                         type="text" 
                         name="text" 
-                        placeholder="Add changes here" 
+                        placeholder="Add changes here"
+                        value={input}
+                        onChange={handleChange}
                     />
                 </label>
-                <input type="submit" value="Edit"/>
-                <button>Cancel</button>
+                <input type="submit" value="Submit"/>
+                <button type="button" onClick={props.hide}>Cancel</button>
             </form>
         </div>
     )

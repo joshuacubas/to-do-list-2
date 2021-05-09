@@ -5,19 +5,19 @@
   display:inline-flex;
 }
 .todo-buttons {
-    background-color: aquamarine;
-    margin-left: 5px;
+  background-color: aquamarine;
+  margin-left: 5px;
 }
- li {
+li {
   border-radius: 8px;
   background-color: rgba(154, 201, 186, 0.221);
   margin: 3px;
   list-style-type: none;
- }
- li:nth-child(even) {
+}
+li:nth-child(even) {
   background-color: rgba(208, 230, 223, 0.892);
- }
+}
 
- .todo-edit-form-hidden {
-   display: none;
- }
+.todo-edit-form-hidden {
+  display: none;
+}

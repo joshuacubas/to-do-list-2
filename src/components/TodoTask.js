@@ -38,7 +38,7 @@ export default function TodoTask(props) {
                 </button>
                 <button className="todo-buttons" onClick={toggleHiddenTodoForm}>✎</button>
             </div>
-            <EditForm isHidden={isHidden}/>
+            <EditForm isHidden={isHidden} hide={toggleHiddenTodoForm} prevText={props.task.text}/>
             {/* <div id={props.task.id} className="todo-hidden-form">
                 <p>make this div its own component l8r</p>
                 <form>
