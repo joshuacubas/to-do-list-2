@@ -10,6 +10,19 @@ export default function TodoTask(props) {
 
     }
 
+    const editTodoTaskText = (newText) => {
+
+        const updatedTodo = {
+            text : newText,
+            id : props.task.id,
+            isCompleted : false
+        };
+        const filteredArr = props.todosArr.filter(todo => todo.id !== props.task.id);
+        const updatedArr = [updatedTodo, ...filteredArr];
+        props.setTodosArr(updatedArr);
+        toggleHiddenTodoForm();
+    }
+
     const taskCompletionToggled = () => {
         console.log(`${props.task.text} clicked`)
         // change the task.isCompleted to opposite
@@ -38,21 +51,12 @@ export default function TodoTask(props) {
                 </button>
                 <button className="todo-buttons" onClick={toggleHiddenTodoForm}>✎</button>
             </div>
-            <EditForm isHidden={isHidden} hide={toggleHiddenTodoForm} prevText={props.task.text}/>
-            {/* <div id={props.task.id} className="todo-hidden-form">
-                <p>make this div its own component l8r</p>
-                <form>
-                    <input
-                        type="text"
-                        name={props.task.id}
-                        placeholder={props.task.text}
-                        className="todo-edit-form-input"
-
-                    />
-                    <button>Submit Changes</button>
-                </form>
-                <button>Cancel</button>
-            </div> */}
+            <EditForm 
+                isHidden={isHidden} 
+                hide={toggleHiddenTodoForm} 
+                prevText={props.task.text}
+                editTodoTaskText={editTodoTaskText}
+            />
         </li>
     )
 }

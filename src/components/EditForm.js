@@ -15,9 +15,18 @@ export default function EditForm(props) {
         SetInput(e.target.value);
     }
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log("submission");
+        //send input back to todo as parameter to be used in a todo function 
+        props.editTodoTaskText(input);
+        //that will amp thru todos arr and make a dupl array sans todo with id of the edit todo
+        // then add the edited todo(same id , new text), and reassign todos arr value to dupl arr
+    }
+
     return (
         <div className={props.isHidden ? "todo-edit-form-hidden" : "todo-edit-form-invisible"}>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <label>
                     <input 
                         type="text" 
