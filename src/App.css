@@ -4,6 +4,10 @@
 .todo-text,.todo-buttons-div{
   display:inline-flex;
 }
+.completed-text{
+  display:inline-flex;
+  text-decoration: line-through;
+}
 .todo-buttons {
   background-color: aquamarine;
   margin-left: 5px;
@@ -21,3 +25,13 @@ li:nth-child(even) {
 .todo-edit-form-hidden {
   display: none;
 }
+
+#completed-todos-ul{
+  border-radius: 8px;
+  margin: 3px;
+  list-style-type: none;
+}
+#completed-todos-ul:nth-child(even) {
+  background-color: rgba(235, 101, 101, 0.892);
+} 
+/* delete above style */

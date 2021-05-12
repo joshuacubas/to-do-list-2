@@ -10,21 +10,27 @@ export default function TodoTask(props) {
 
     }
 
-    const editTodoTaskText = (newText) => {
+    const editTodoTaskText = (newText,completionStatus=false) => {
+        changeTodoTaskText(newText,completionStatus=false);
+        toggleHiddenTodoForm();
+    }
+
+    const changeTodoTaskText = (newText,completionStatus=false) => {
 
         const updatedTodo = {
             text : newText,
             id : props.task.id,
-            isCompleted : false
+            isCompleted : completionStatus
         };
         const filteredArr = props.todosArr.filter(todo => todo.id !== props.task.id);
         const updatedArr = [updatedTodo, ...filteredArr];
         props.setTodosArr(updatedArr);
-        toggleHiddenTodoForm();
+        
     }
 
     const taskCompletionToggled = () => {
-        console.log(`${props.task.text} clicked`)
+        changeTodoTaskText(props.task.text, !props.task.isCompleted);
+        console.log(props.task.isCompleted)
         // change the task.isCompleted to opposite
         // or nvm completed UL > Li will have strike through style
     } 
@@ -36,7 +42,7 @@ export default function TodoTask(props) {
     return (
         <li>
             <div 
-                className="todo-text"  
+                className={props.task.isCompleted ? "completed-text" : "todo-text" } 
                 onClick={taskCompletionToggled}
             >
                 <p>{props.task.text}</p>
