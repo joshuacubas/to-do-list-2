@@ -27,7 +27,7 @@ export default function TodoForm(props) {
     }
 
     return (
-        <div>
+        <div id="add-todo-form-container">
             <form className="task-form" onSubmit={handleSubmit}>
                 <input
                     type="text"
@@ -37,8 +37,9 @@ export default function TodoForm(props) {
                     className="form-input-box"
                     onChange={handleChange}
                     ref={inputRef}
+                    maxLength="50"
                 />
-                <button>Add New</button>
+                <button id="add-todo-form-button">Add New</button>
             </form>
         </div>
     )

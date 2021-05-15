@@ -41,22 +41,25 @@ export default function TodoTask(props) {
 
     return (
         <li>
-            <div 
-                className={props.task.isCompleted ? "completed-text" : "todo-text" } 
-                onClick={taskCompletionToggled}
-            >
-                <p>{props.task.text}</p>
-            </div>
-
-            <div className="todo-buttons-div">
-                <button
-                    onClick={deleteTodoTask}
-                    className="todo-buttons"
+            <div className="div-todo-text-btns-containers">
+                <div 
+                    className={props.task.isCompleted ? "completed-text" : "todo-text" } 
+                    onClick={taskCompletionToggled}
                 >
-                    ✘
-                </button>
-                <button className="todo-buttons" onClick={toggleHiddenTodoForm}>✎</button>
+                    <p>{props.task.text}</p>
+                </div>
+
+                <div className="todo-buttons-div">
+                    <button
+                        onClick={deleteTodoTask}
+                        className="todo-buttons"
+                    >
+                        ✘
+                    </button>
+                    <button className="todo-buttons" onClick={toggleHiddenTodoForm}>✎</button>
+                </div> 
             </div>
+            
             <EditForm 
                 isHidden={isHidden} 
                 hide={toggleHiddenTodoForm} 

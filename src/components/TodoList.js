@@ -22,15 +22,11 @@ export default function todoList(props) {
     
     return (
         <div>
-            <p>To Do's:</p>
             <ul>{todoLis}</ul>
-            <p>Completed:</p>
-            {/* <ul id="completed-ul">
-                <li className="completed-todos"><p>finish hw</p></li>
-                <li className="completed-todos"><p>take out trash</p></li>
-                <li className="completed-todos"><p>wash car</p></li>
-            </ul> */}
-            <ul className="completed-todos-ul">{completedLis}</ul>
+            <br />
+            <h2>Things Completed:</h2>
+            <br />
+            <ul id="completed-todos-ul">{completedLis}</ul>
         </div>
 
     )

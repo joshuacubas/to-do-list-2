@@ -34,6 +34,7 @@ export default function EditForm(props) {
                         placeholder="Add changes here"
                         value={input}
                         onChange={handleChange}
+                        maxLength="50"
                     />
                 </label>
                 <input type="submit" value="Submit"/>

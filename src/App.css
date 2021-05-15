@@ -1,8 +1,29 @@
 .App {
   text-align: center;
 }
+
+button, input[type=submit], button.todo-buttons {
+  width:10%;
+}
+button.todo-buttons {
+  height: 80%;
+  width: 40%;
+}
+
+input[type=text] {
+  width:70%;
+}
+
+input.form-input-box{
+  width:70%;
+}
 .todo-text,.todo-buttons-div{
   display:inline-flex;
+}
+
+.todo-buttons-div {
+  width: 10%;
+  min-width: fit-content;
 }
 .completed-text{
   display:inline-flex;
@@ -12,26 +33,44 @@
   background-color: aquamarine;
   margin-left: 5px;
 }
+p{
+  text-align: center;
+  
+}
 li {
-  border-radius: 8px;
-  background-color: rgba(154, 201, 186, 0.221);
-  margin: 3px;
-  list-style-type: none;
+  list-style-type:none;
+  margin: 0 auto;
+  width: 100%;
+  font-size: 2em;
+  
 }
 li:nth-child(even) {
-  background-color: rgba(208, 230, 223, 0.892);
+  background-color: rgba(152, 236, 174, 0.301);
+}
+li:nth-child(odd) {
+  background-color: rgba(139, 230, 201, 0.452);
 }
 
+#completed-todos-ul > li:nth-child(even) {
+  background-color: rgba(153, 152, 236, 0.301);
+}
+#completed-todos-ul > li:nth-child(odd) {
+  background-color: rgba(139, 153, 230, 0.452);
+}
 .todo-edit-form-hidden {
   display: none;
 }
 
-#completed-todos-ul{
-  border-radius: 8px;
-  margin: 3px;
-  list-style-type: none;
+ul {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(0, 0, 0, 0);
+  padding: 0;
+  width: 100%;
+  justify-content: center;
 }
-#completed-todos-ul:nth-child(even) {
-  background-color: rgba(235, 101, 101, 0.892);
-} 
-/* delete above style */
+
+.div-todo-text-btns-containers {
+  display:flex;
+  justify-content: space-between;
+}
