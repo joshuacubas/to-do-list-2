@@ -10,8 +10,9 @@ export default function todoList(props) {
             todosArr={props.todosArr}
         />
     );
-
-    const completedLis = props.todosArr.filter(ea => ea.isCompleted === true).map(task => 
+    const completedTodosExist = props.todosArr.filter(ea => ea.isCompleted === true)
+    
+    const completedLis = completedTodosExist.map(task => 
         <TodoTask 
             key={task.id} 
             task={task} 
@@ -19,12 +20,16 @@ export default function todoList(props) {
             todosArr={props.todosArr}
         />
     );
+    console.log("completedTodosExist result : ",completedTodosExist)
+
+    const thingsCompleted = <h1>{completedTodosExist.length === 0 ? "" : "Completed"}</h1>
+
     
     return (
         <div>
             <ul>{todoLis}</ul>
             <br />
-            <h2>Things Completed:</h2>
+            {thingsCompleted}
             <br />
             <ul id="completed-todos-ul">{completedLis}</ul>
         </div>
