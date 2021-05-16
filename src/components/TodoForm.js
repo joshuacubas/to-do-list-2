@@ -21,6 +21,7 @@ export default function TodoForm(props) {
     };
 
     const handleSubmit = e => {
+        setInput(input.trim())
         e.preventDefault();
         addTodo();
         setInput("");

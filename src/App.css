@@ -43,7 +43,8 @@ button#add-todo-form-button {
 button.todo-buttons {
   border-radius: 4em;
   height:3em;
-  width: 3em;;
+  width: 3em;
+  font-size: .75em;
 }
 
 .completed-text{
