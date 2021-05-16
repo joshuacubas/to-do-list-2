@@ -8,7 +8,7 @@ function App() {
 
   return (
     <div className="App">
-      <header><h1>Things To Do List</h1></header>
+      <header><h1>Things To Do</h1></header>
       <TodoForm setTodosArr={setTodosArr} todosArr={todosArr}/>
       <br />
       <TodoList setTodosArr={setTodosArr} todosArr={todosArr}/>

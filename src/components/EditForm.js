@@ -35,10 +35,12 @@ export default function EditForm(props) {
                         value={input}
                         onChange={handleChange}
                         maxLength="50"
+                        className="edit-form-textboxes"
                     />
                 </label>
-                <input type="submit" value="Submit"/>
-                <button type="button" onClick={props.hide}>Cancel</button>
+                <button type="button" onClick={props.hide} className="edit-form-buttons">Cancel</button>
+                <input type="submit" value="Submit" className="edit-form-buttons"/>
+                
             </form>
         </div>
     )

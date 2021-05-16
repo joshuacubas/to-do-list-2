@@ -50,13 +50,13 @@ export default function TodoTask(props) {
                 </div>
 
                 <div className="todo-buttons-div">
+                    <button className="todo-buttons" onClick={toggleHiddenTodoForm}>✎</button>
                     <button
                         onClick={deleteTodoTask}
                         className="todo-buttons"
                     >
                         ✘
                     </button>
-                    <button className="todo-buttons" onClick={toggleHiddenTodoForm}>✎</button>
                 </div> 
             </div>
             

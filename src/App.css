@@ -47,6 +47,23 @@ button.todo-buttons {
   font-size: .75em;
 }
 
+.edit-form-textboxes {
+  display: inline-flex;
+  height: max-content;
+  font-size: .75em;
+  flex-direction: row;
+  float:left;
+  margin-left: .5em;
+  margin-bottom: .5em;
+  width:75%;
+}
+
+.edit-form-buttons {
+  float: right;
+  font-size: .5em;
+  margin: 5px 5px 0 5px;
+}
+
 .completed-text{
   display:inline-flex;
   text-decoration: line-through;
