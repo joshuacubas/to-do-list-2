@@ -36,11 +36,14 @@ button#add-todo-form-button {
 }
 .todo-text,.todo-buttons-div{
   display:inline-flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 button.todo-buttons {
-
-
+  border-radius: 4em;
+  height:3em;
+  width: 3em;;
 }
 
 .completed-text{
@@ -49,6 +52,7 @@ button.todo-buttons {
 }
 .todo-buttons {
   margin-left: 5px;
+  margin-right: 5px;
   height:1em;
   background-color: inherit;
 }
@@ -64,11 +68,25 @@ li {
   font-size: 2em;
   
 }
+
+li:nth-child(1) {
+  border-top-left-radius: .75em;
+  border-top-right-radius: .75em;
+}
+li:last-child {
+  border-bottom-left-radius: .75em;
+  border-bottom-right-radius: .75em;
+}
 li:nth-child(even) {
   background-color: rgba(152, 236, 174, 0.301);
 }
 li:nth-child(odd) {
   background-color: rgba(139, 230, 201, 0.452);
+}
+
+h1 {
+  margin-top: 1em;
+  margin-bottom: 1em;;
 }
 
 #completed-todos-ul > li:nth-child(even) {

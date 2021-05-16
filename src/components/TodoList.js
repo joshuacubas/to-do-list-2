@@ -20,17 +20,15 @@ export default function todoList(props) {
             todosArr={props.todosArr}
         />
     );
-    console.log("completedTodosExist result : ",completedTodosExist)
 
-    const thingsCompleted = <h1>{completedTodosExist.length === 0 ? "" : "Completed"}</h1>
+    const thingsCompleted = <h1 id="things-completed">{completedTodosExist.length === 0 ? "" : "Completed"}</h1>
 
-    
     return (
         <div>
             <ul>{todoLis}</ul>
-            <br />
+            
             {thingsCompleted}
-            <br />
+            
             <ul id="completed-todos-ul">{completedLis}</ul>
         </div>
 
