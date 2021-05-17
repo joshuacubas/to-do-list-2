@@ -140,5 +140,5 @@ div#add-todo-form-container {
 form.task-form {
   display:flex;
   justify-content: center;
-  
+  margin-bottom: 2em;
 }
